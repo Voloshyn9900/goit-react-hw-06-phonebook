@@ -1,4 +1,9 @@
-export const Filter = ({ filter, onChangeFilter }) => {
+import { useDispatch, useSelector } from "react-redux";
+import { changeFilter } from "../../redux/contactSlice";
+
+export const Filter = () => {
+  const dispatch = useDispatch();
+  const filter = useSelector(state => state.account.filter);
   return (
     <>
       <label>
@@ -7,7 +12,7 @@ export const Filter = ({ filter, onChangeFilter }) => {
           type="text"
           placeholder="Filter"
           value={filter}
-          onChange={e => onChangeFilter(e.target.value)}
+          onChange={e => dispatch(changeFilter(e.target.value))}
         />
       </label>
     </>
