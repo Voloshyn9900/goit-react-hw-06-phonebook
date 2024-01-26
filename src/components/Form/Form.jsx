@@ -3,7 +3,7 @@ import { FormContainer, Label, SubmitButton } from './Form.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContacts } from '../../redux/contactSlice';
 
-export const Form = ({}) => {
+export const Form = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(state => state.account.contacts);
 
